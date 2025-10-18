@@ -1,0 +1,7 @@
+numpy>=1.22,<2.1
+numba>=0.57
+scikit-learn>=1.2
+pandas>=1.5
+sktime>=0.21
+huggingface-hub>=0.34.4
+hf_xet>=1.1.10
