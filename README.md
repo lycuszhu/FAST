@@ -1,9 +1,11 @@
 
 
-# FAST — Feature Activation-induced Shapelet Transform
+# FAST: Feature mAp-induced Shapelet Transform
 
 **FAST** is a two-stage framework. 
+
 Stage 1 applies a MultiROCKET-style kernel transform to obtain a strong and inexpensive baseline representation. 
+
 Stage 2 harvests candidate shapelets from high-convolution locations from Stage~1 and encodes them using the same pooled statistics (features), retaining only those that improve a label-aware discrimination score over their kernel parents. The result is a compact feature set that augments baseline kernel features with shapelet kernel features. Figure below shows a high-level architecture of FAST.
 
 
