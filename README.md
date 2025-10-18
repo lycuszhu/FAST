@@ -2,22 +2,22 @@
 
 # FAST — Feature Activation-induced Shapelet Transform
 
-**FAST** is a two-stage, CPU-efficient time-series classifier that joins multiROCKET speed with shapelet interpretability.
+**FAST** is a two-stage framework. 
+Stage 1 applies a MultiROCKET-style kernel transform to obtain a strong and inexpensive baseline representation. 
+Stage 2 harvests candidate shapelets from high-convolution locations from Stage~1 and encodes them using the same pooled statistics (features), retaining only those that improve a label-aware discrimination score over their kernel parents. The result is a compact feature set that augments baseline kernel features with shapelet kernel features. Figure below shows a high-level architecture of FAST.
 
-* **Stage-1 (MR-style kernels):** DC-balanced short kernels (K=9; optionally K=6, K=3) with dilations, bias (threshold) calibration via LDS quantiles, and 4 statistics per bias (optionally +1 max). This reproduces the spirit of multiROCKET and yields a strong, fast baseline.
-* **Stage-2 (harvest shapelets):** Use the **arg-max activations** from Stage-1 to cut actual subsequences from the training series (the “activation-induced” shapelets). Keep a candidate only if its features (same stats/biases as its kernel parent) **improve ANOVA η²** over the parent. Features are computed on base and first-difference signals, then concatenated.
 
----
+![FAST overview](results/plots/fast_architecture.png)
+
 
 ## Environment
 
 We recommend Python **3.9–3.11**. 
 
----
 
 ## Quick start
 
-Run a single dataset benchmark with all six ablations:
+Run a single dataset:
 
 ```bash
 # from the repo root
@@ -47,7 +47,7 @@ The output will display:
 * `--shapelet_budget_total INT` — override default shapelet budget
 
 
----
+
 
 ## Reproducibility notes
 
