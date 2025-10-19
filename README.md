@@ -2,7 +2,7 @@
 
 # FAST: Feature mAp-induced Shapelet Transform
 
-**FAST** is a two-stage framework. 
+**FAST** is a two-stage framework for time series classification. 
 
 Stage 1 applies a MultiROCKET-style kernel transform to obtain a strong and inexpensive baseline representation. 
 
